@@ -15,6 +15,7 @@ const DateTime = ({country}) => {
   const timeNow = useSelector(state => state.setTime)
   return (
     <div className="date">
+    {/* date field header */}
       { country && (
         <>
           <span className="calendar">&#x1f4c5;</span>

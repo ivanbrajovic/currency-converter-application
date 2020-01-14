@@ -1,5 +1,9 @@
-const setTime = (state, action) => (action.payload || null)
+const getCity = (state = 'London', action) => (action.type==='city' ? action.payload || state)
+
+const setTime = (state = '', action) => (action.type==='time'?action.payload || state)
 
 export {
-  setTime
+  setTime,
+  getCity
+
 }

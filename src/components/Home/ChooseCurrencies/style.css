@@ -1,0 +1,44 @@
+.choose-curencies {
+  padding: 20px 20px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choose-curencies .invert div{
+  border-radius: 50%;
+  background-color: lightblue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.choose-curencies .invert div::before,
+.choose-curencies .invert div::after{
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  transition: .2s;
+  background: lightseagreen;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.choose-curencies .invert div::after {
+  height: 100%;
+  width: 100%;
+  background-color: lightblue;
+}
+.choose-curencies .invert div:hover::before{
+  height: 50px;
+  width: 50px;
+}
+
+

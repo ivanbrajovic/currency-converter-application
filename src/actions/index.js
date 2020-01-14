@@ -3,6 +3,12 @@ const setTime = () => ({
   payload: new Date().toLocaleString()
 })
 
+const setCity = (city) => ({
+  type: 'city',
+  payload: city
+})
+
 export {
-  setTime
+  setTime,
+  setCity
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './components/Header'
 import Home from './components/Home'
 import Page404 from './components/Page404'
+import CityInfo from './components/CityInfo'
 import {
   BrowserRouter as Router,
   Switch,
@@ -37,7 +38,7 @@ export default class App extends Component {
             <Route path="/currency-info" component={CurrencyInfo}/>
             <Route component={Page404} />
         </Switch>
-        
+        <CityInfo />
         </div>
       </div>
       </Router>
