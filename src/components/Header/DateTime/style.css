@@ -1,0 +1,25 @@
+.date {
+  width: 200px;
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.date .calendar {
+  filter: invert(1);
+}
+
+.date .day {
+  margin-left: 5px;
+}
+
+.date .time {
+  display: block;
+  color: lightblue;
+}
+
+.date .time span {
+  color: #888888;
+}

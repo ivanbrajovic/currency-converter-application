@@ -1,13 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { Component } from 'react'
+import Header from './components/Header'
+import Page404 from './components/Page404'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom"
+import './App.css'
+const CurrencyInfo = () => {
   return (
-    <div className="App">
-     10
-    </div>
-  );
+    <div> info </div>
+  )
+}
+const Home = () => {
+  return (
+    <div> home </div>
+  )
 }
 
-export default App;
+export default class App extends Component {
+
+  state = {
+    place: null
+  }
+
+  componentDidMount () {
+    fetch(`http://ip-api.com/json/`)
+    .then(res => res.json())
+    .then(res =>this.setState({
+       place: res.countryCode.toLowerCase()
+    }))
+  }
+  render () {
+    return (
+      <Router>
+      <div className="App">
+        <div className="App-container">
+          <Header country={this.state.place}/>
+          <Switch> 
+            <Route path="/" exact component={Home}/>
+            <Route path="/currency-info" component={CurrencyInfo}/>
+            <Route component={Page404} />
+        </Switch>
+        
+        </div>
+      </div>
+      </Router>
+    )
+  }
+}
+
