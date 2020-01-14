@@ -2,20 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import allReducers from './reducers'
-// import { createStore } from 'redux'
+import allReducers from './reducers'
+import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker';
 /* eslint-disable no-underscore-dangle */
-// const store = createStore(allReducers,
-// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// )
-// console.log(store)
+const store = createStore(allReducers,
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+console.log(store)
 /* eslint-enable */
 ReactDOM.render(
-  // <Provider /*store={ store }*/>
+  <Provider store={ store }>
     <App />
-  // </Provider>
+     </Provider>
   , document.getElementById('root')
 );
 

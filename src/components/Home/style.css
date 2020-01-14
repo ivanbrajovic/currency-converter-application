@@ -1,0 +1,19 @@
+.home {
+  padding: 20px 0;
+  font-size: 15px;
+}
+
+.home h1 {
+  font-size: 30px;
+  font-weight: 400
+}
+
+.home .today {
+  color: lightblue;
+}
+
+@media (max-width: 400px) {
+  .home h1 {
+    font-size: 17px;
+  }
+}

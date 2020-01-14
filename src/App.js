@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './components/Header'
+import Home from './components/Home'
 import Page404 from './components/Page404'
 import {
   BrowserRouter as Router,
@@ -12,12 +13,6 @@ const CurrencyInfo = () => {
     <div> info </div>
   )
 }
-const Home = () => {
-  return (
-    <div> home </div>
-  )
-}
-
 export default class App extends Component {
 
   state = {
