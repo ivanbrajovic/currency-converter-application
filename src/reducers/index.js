@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux'
-import { setTime, getCity } from './reducers'
+import { setTime, getCity, json } from './reducers'
 
 const allReducers = combineReducers({
  setTime,
- getCity
+ getCity,
+ json
 })
 
 export default allReducers 

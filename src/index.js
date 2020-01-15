@@ -6,12 +6,9 @@ import allReducers from './reducers'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker';
-/* eslint-disable no-underscore-dangle */
 const store = createStore(allReducers,
 window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
-console.log(store)
-/* eslint-enable */
 ReactDOM.render(
   <Provider store={ store }>
     <App />
@@ -19,7 +16,4 @@ ReactDOM.render(
   , document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();

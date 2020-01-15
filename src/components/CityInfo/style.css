@@ -1,7 +1,6 @@
 .city-info {
   height: calc(100% - 70px);
   width: 200px;
-  /* padding: 20px 0; */
   background: #282829;
   color: #ffffff;
   font-size: 14px;
@@ -96,10 +95,10 @@
   display: inline-block;
   position: relative;
   top: 0;
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   border-radius: 12px;
-  border: 2px solid lightblue;
+  border: 1px solid #3a4040;
   background-color: transparent;
 }
 
@@ -109,13 +108,18 @@
 
 .label input[type='radio']:checked+span {
   /*styles inside circle*/
-  top: 4px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 5.2px;
+  left: 5.5px;
+  /* transform: translateX(-50%); */
   border-radius: 11px;
-  width: 8px;
-  height: 8px;
+  box-shadow: 0 0 10px lightskyblue;
+  width: 7.7px;
+  height: 7.7px;
   position: absolute;
   display: block;
   background-color: lightblue;
+}
+
+.label:hover::before {
+  box-shadow: 0 0 3px #444;
 }

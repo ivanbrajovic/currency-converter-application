@@ -1,8 +1,20 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Header from './components/Header'
 import Home from './components/Home'
 import Page404 from './components/Page404'
 import CityInfo from './components/CityInfo'
+import countries from './countries.json'
+import data_base from './app-base/db.json'
+import {
+  getIp,
+  setBase,
+  setCity,
+  getAllCuurencies,
+  setCurrencyToConvert,
+  getCurrentExRate
+  } from './actions'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,18 +26,30 @@ const CurrencyInfo = () => {
     <div> info </div>
   )
 }
-export default class App extends Component {
 
+class App extends Component {
   state = {
     place: null
   }
 
   componentDidMount () {
+    const reducers = (...actions) => (
+      actions.map(n => this.props.dispatch(n))
+    )
+
     fetch(`http://ip-api.com/json/`)
     .then(res => res.json())
-    .then(res =>this.setState({
-       place: res.countryCode.toLowerCase()
-    }))
+    .then(res =>{
+      this.setState({
+        place: res.countryCode.toLowerCase()
+      })
+      reducers(getIp(res),
+        setBase(countries.find(item => item.name === res.country)),
+        setCurrencyToConvert(countries.find(item => item.name === "Germany")), //default conversion currency - euro
+        setCity(res.city),
+        getAllCuurencies(countries),
+        getCurrentExRate(data_base))
+    })
   }
   render () {
     return (
@@ -45,4 +69,8 @@ export default class App extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+ return {}
+}
 
+export default connect(mapStateToProps)(App)

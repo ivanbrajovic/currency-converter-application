@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  user-select: none;
 }
 body {
   margin: 0;
@@ -22,7 +23,8 @@ a, a:visited, a:active {
   text-decoration: none;
 }
 
-input, input:checked, input:focus {
+input, input:checked, input:focus, select, select:focus {
   border: none;
   outline: none;
+  user-select: auto;
 }

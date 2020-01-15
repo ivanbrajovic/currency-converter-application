@@ -1,7 +1,7 @@
 import React from "react"
-import { useDispatch , useSelector} from "react-redux"
+import { useDispatch } from "react-redux"
 import json from '../../countries.json'
-import { setCity } from '../../actions'
+import { setCity, setBase } from '../../actions'
 import "./style.css"
 
 const CityInfo = () => {
@@ -15,8 +15,6 @@ const CityInfo = () => {
   const dispatch  = useDispatch()
 
   const search = event => {
-    const key = event.keyCode || event.charCode
-    if (key === 13) {
       const list = event.target.parentNode.parentNode.nextElementSibling
       list.scrollTop = 
         Array.from(list.children[1].children)
@@ -24,7 +22,6 @@ const CityInfo = () => {
           .toLowerCase().
           includes(event.target.value.toLowerCase()))
         .map(n=>n.offsetTop)[0] - 100
-    }
   }
 
   const findCity = (city) => city.replace(/\s/g, '').toLowerCase()
@@ -33,6 +30,7 @@ const CityInfo = () => {
     const city = event.currentTarget.textContent,
     cityName =  json.find(item=> findCity(item.capital).includes(findCity(city)))
     dispatch(setCity(cityName))
+    dispatch(setBase(cityName))
   }
 
   return (
@@ -48,7 +46,7 @@ const CityInfo = () => {
             type="text"
             placeholder="Choose Your City"
             spellCheck="false"
-            onKeyPress={search} />
+            onInput={search} />
         </h2>
       </div>
       {/* content */}

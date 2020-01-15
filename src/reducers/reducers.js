@@ -1,9 +1,24 @@
-const getCity = (state = 'London', action) => (action.type==='city' ? action.payload || state)
-
-const setTime = (state = '', action) => (action.type==='time'?action.payload || state)
+const findItem = (item, { type, payload }, state) => type === item ? payload : state
+const getCity = (state = 'London', action) => findItem('city', action, state)
+const setTime = (state = '', action) => findItem('time', action, state)
+const json = (state = {
+  'ip': null,
+  'base': null,
+  'value': null,
+  'allCurrencies': null,
+  'rate': null,
+  'currency': null }, action) => ({
+  ...state,
+    'ip':  findItem('ip', action, state.ip),
+    'base':findItem('base', action, state.base),
+    'value': findItem('value', action, state.value),
+    'allCurrencies': findItem('allCurrencies', action, state.allCurrencies),
+    'rate': findItem('rate', action, state.rate),
+    'currency': findItem('currency', action, state.currency)
+})
 
 export {
   setTime,
-  getCity
-
+  getCity,
+  json
 }

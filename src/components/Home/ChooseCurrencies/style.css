@@ -3,6 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .choose-curencies .invert div{
@@ -23,10 +25,11 @@
 .choose-curencies .invert div::after{
   position: absolute;
   content: "";
-  width: 0;
-  height: 0;
-  transition: .2s;
+  width: 100%;
+  height: 100%;
+  transition: all .8s;
   background: lightseagreen;
+  opacity: .3;
   border-radius: 50%;
   z-index: -1;
 }
@@ -41,4 +44,93 @@
   width: 50px;
 }
 
+.f-t {
+  font-size: 14px;
+  font-weight: 100;
+}
+.currency-text {
 
+  font-weight: 700;
+  font-size: 15px;
+  position: relative;
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 10px;
+  padding-right: 100px;
+  right: 0;
+  width: 230px;
+}
+
+.list-coutries-name {
+  width: 100%;
+  color: #888;
+  white-space: pre-wrap;
+  font-size: 10px;
+}
+
+.currency-text span {
+  font-weight: 100;
+  font-size: 12px;
+  color: lightseagreen;
+}
+
+.choose-curencies ul {
+  height: 300px;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: calc(100% - 10px);
+  background-color: #fff;
+  box-shadow: 0 0 20px #e4e4e4;
+  padding: 10px;
+}
+
+.choose-curencies ul::-webkit-scrollbar {
+  width: 5px;
+  background-color: #e4e4e4;
+}
+.choose-curencies ul::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+.choose-curencies ul::-webkit-scrollbar-thumb:hover{
+  background-color: #f4f4f4;
+}
+
+.choose-curencies .from-to {
+  position: relative;
+}
+
+.choose-curencies  .arrow-down {
+  height: 30px;
+  width: 30px;
+  background-color: #ffffff;
+  position: absolute;
+  right: 0;
+  top: -10px;
+  color: #282825;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  transition: .4s;
+}
+
+.choose-curencies .arrow-down:hover {
+  background-color: #f4f4f4;
+}
+
+.choose-curencies ul li {
+  width: 50px;
+  display: flex;
+ flex-wrap: wrap;
+   justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 100;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.choose-curencies ul  li span {
+  color: blue;
+}
