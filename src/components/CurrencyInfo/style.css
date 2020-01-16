@@ -37,3 +37,32 @@
 .currency-info-component h4:first-of-type {
   margin-top: 50px;
 }
+
+.percentag {
+  margin-left:25px;
+  font-size: 25px;
+  font-weight: 200;
+}
+
+.svg-charts {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.svg-charts svg {
+  transition: all 1s;
+  filter: grayscale(1) opacity(.7);
+  border-radius:24px;border: 1px solid transparent;
+  padding: 10px;
+}
+
+.svg-charts svg:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  filter: grayscale(0) opacity(1);
+  box-shadow: 0 0 20px #f4f4f4;
+  border-color: #e4e4e4;
+}
