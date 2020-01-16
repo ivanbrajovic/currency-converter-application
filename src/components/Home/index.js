@@ -2,6 +2,7 @@ import React from 'react'
 import  ChooseCurrencies from './ChooseCurrencies'
 import { useSelector } from 'react-redux'
 import TypeValues from './TypeValues'
+import  AdditionalInfo  from './AdditionalInfo';
 import './style.css'
 
 const Home = () => {

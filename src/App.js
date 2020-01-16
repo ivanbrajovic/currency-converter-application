@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Page404 from './components/Page404'
 import CityInfo from './components/CityInfo'
+import CurrencyInfo from './components/CurrencyInfo'
 import countries from './countries.json'
 import data_base from './app-base/db.json'
 import {
@@ -21,11 +22,6 @@ import {
   Route
 } from "react-router-dom"
 import './App.css'
-const CurrencyInfo = () => {
-  return (
-    <div> info </div>
-  )
-}
 
 class App extends Component {
   state = {

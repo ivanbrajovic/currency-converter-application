@@ -1,0 +1,39 @@
+.currency-info-component {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.currency-info-component h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.currency-info-component h2 {
+  font-weight: 400;
+  font-size: 20px;
+  color: #777;
+}
+
+.currency-info-component h2 span:first-of-type{
+  color: #777;
+  margin-left: 30px;
+}
+
+.currency-info-component h2 span:last-of-type{
+  color: lightblue;
+  margin-left: 30px;
+}
+
+.currency-info-component h4 {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.currency-info-component h4 span {
+  color: #111
+}
+
+.currency-info-component h4:first-of-type {
+  margin-top: 50px;
+}

@@ -1,0 +1,100 @@
+.addition-info{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 240px;
+  display: flex;
+  flex-wrap: wrap;
+  
+  bottom: 0;
+  z-index: 0;
+}
+
+.addition-info > div {
+  overflow: hidden;
+  position: relative;
+  border-radius: 34px;
+  box-shadow: 0 0 24px #333;
+  background: #272828;
+}
+
+.addition-info .reduce {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  height: 40px;
+  font-size: 20px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  transition: all .4s;
+  box-shadow: 0 0 10px #e4e4e4;
+}
+
+.addition-info .reduce:hover {
+  cursor: pointer;
+  background: lightpink;
+}
+
+.additional-back {
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  filter: blur(10px) brightness(.5) opacity(.7);
+  position: absolute;
+}
+
+.additional-back img {
+  position: absolute;
+  top: 50%;
+  width: 151%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events:none;
+}
+
+.currency-info {
+  flex-wrap: wrap; align-items: center;
+  width: 90%;
+  margin: auto;
+  border-bottom: 1px solid white;
+  color: white;
+  padding: 10px 0;
+  display: flex;
+}
+
+.currency-info h2 {
+  font-weight: 200;
+  font-size: 13px;
+  width: 100%;
+}
+
+.currency-ad {
+  font-size: 20px;
+  color: lightpink;
+}
+
+.addition-image-flags {
+
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+}
+.addition-image-flags img {
+  position: absolute;
+  top: 50%;
+  width: 200%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 480px) {
+  .addition-info {
+    width: 100%;
+  }
+}
