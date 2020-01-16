@@ -2,7 +2,8 @@ import React from 'react'
 import  ChooseCurrencies from './ChooseCurrencies'
 import { useSelector } from 'react-redux'
 import TypeValues from './TypeValues'
-import  AdditionalInfo  from './AdditionalInfo';
+import  AdditionalInfo  from './AdditionalInfo'
+import Chart from './Chart'
 import './style.css'
 
 const Home = () => {
@@ -56,6 +57,7 @@ const Home = () => {
           <AdditionalInfo />
         )
       }
+      <Chart />
     </div>
   )
   
