@@ -8,7 +8,6 @@ import CurrencyInfo from './components/CurrencyInfo'
 import countries from './countries.json'
 import data_base from './app-base/db.json'
 import theme_invert from './theme-invert.png'
-import ip from './ip.json'//*this part only for the test
 import {
   getIp,
   setBase,
@@ -37,33 +36,19 @@ class App extends Component {
       actions.map(n => this.props.dispatch(n))
     )
 
-    // fetch(`http://ip-api.com/json/`)
-    // .then(res => res.json())
-    // .then(res =>{
-    //   this.setState({
-    //     place: res.countryCode.toLowerCase()
-    //   })
-    //   reducers(getIp(res),
-    //     setBase(countries.find(item => item.name === res.country)),
-    //     setCurrencyToConvert(countries.find(item => item.name === "Germany")), //default conversion currency - euro
-    //     setCity(res.city),
-    //     getAllCuurencies(countries),
-    //     getCurrentExRate(data_base))
-    // })
-    
-    
-    // only for the test
-    // for production uncomment code above
-    //and delete code below
-     this.setState({
-        place: ip.countryCode.toLowerCase()
+    fetch(`http://ip-api.com/json/`)
+    .then(res => res.json())
+    .then(res =>{
+      this.setState({
+        place: res.countryCode.toLowerCase()
       })
-        reducers(getIp(ip),
-        setBase(countries.find(item => item.name === ip.country)),
+      reducers(getIp(res),
+        setBase(countries.find(item => item.name === res.country)),
         setCurrencyToConvert(countries.find(item => item.name === "Germany")), //default conversion currency - euro
-        setCity(ip.city),
+        setCity(res.city),
         getAllCuurencies(countries),
         getCurrentExRate(data_base))
+    })
   }
 
   themeInvert = () => {
