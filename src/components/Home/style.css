@@ -13,8 +13,37 @@
   color: lightblue;
 }
 
+@media (max-width: 768px) {
+  .choose-curencies {
+    display: block;
+  }
+  .choose-curencies .from-to, .choose-curencies .invert {
+    margin-top: 30px;
+  }
+  .typeValues{
+    display: block;
+    height: auto;
+  }
+}
+
 @media (max-width: 400px) {
   .home h1 {
     font-size: 17px;
+  }
+  .currency-text {
+    width: auto;
+  }
+  .type-valueHere {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 1054px) {
+  .home {
+    width: 100%;
+  }.addition-info {
+    bottom: auto;
+    top: 327px;
+    right: 0;
   }
 }

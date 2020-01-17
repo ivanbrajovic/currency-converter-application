@@ -10,6 +10,7 @@ const setCurrencyToConvert = value => action('value', value)
 const getAllCuurencies = allCurrencies => action('allCurrencies', allCurrencies)
 const getCurrentExRate = rate => action('rate', rate)
 const valueToCalculate = currency => action('currency', currency)
+const setthemeInvert = t => action('t', t)
 export { 
   setTime,
   setCity,
@@ -18,5 +19,6 @@ export {
   setCurrencyToConvert,
   getAllCuurencies,
   getCurrentExRate,
-  valueToCalculate
+  valueToCalculate,
+  setthemeInvert
 }

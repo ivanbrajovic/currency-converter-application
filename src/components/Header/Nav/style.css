@@ -38,6 +38,7 @@ nav ul li {
 @media only screen and (max-width: 600px) {
   .menu-button {
     display: block;
+    z-index: 12;
   }
 
   nav ul {
@@ -46,12 +47,12 @@ nav ul li {
   nav ul.responsive-menu {
     display: block;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     width: 50%;
     height: calc(100% - 40px);
     padding-top: 30%;
     top: -17px;
-    left: 0;
+    left: -20px;
     background: lightblue;
     display: block;
   }

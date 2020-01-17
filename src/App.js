@@ -7,13 +7,15 @@ import CityInfo from './components/CityInfo'
 import CurrencyInfo from './components/CurrencyInfo'
 import countries from './countries.json'
 import data_base from './app-base/db.json'
+import theme_invert from './theme-invert.png'
 import {
   getIp,
   setBase,
   setCity,
   getAllCuurencies,
   setCurrencyToConvert,
-  getCurrentExRate
+  getCurrentExRate,
+  setthemeInvert
   } from './actions'
 
 import {
@@ -25,7 +27,8 @@ import './App.css'
 
 class App extends Component {
   state = {
-    place: null
+    place: null,
+    themeInvert: false
   }
 
   componentDidMount () {
@@ -47,11 +50,24 @@ class App extends Component {
         getCurrentExRate(data_base))
     })
   }
+
+  themeInvert = () => {
+    this.setState({
+      themeInvert: !this.state.themeInvert
+    })
+    this.props.dispatch(setthemeInvert(!this.state.themeInvert))
+  }
+  
   render () {
     return (
       <Router>
-      <div className="App">
+      <div className="App" style={{
+        filter: `invert(${this.state.themeInvert? 1 : 0})`
+      }}>
         <div className="App-container">
+        <div className="theme-inv" onClick={this.themeInvert}>
+          <img src={theme_invert} alt="invert" />
+        </div>
           <Header country={this.state.place}/>
           <Switch> 
             <Route path="/" exact component={Home}/>

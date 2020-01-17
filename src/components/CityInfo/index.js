@@ -1,5 +1,5 @@
 import React from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import json from '../../countries.json'
 import { setCity, setBase } from '../../actions'
 import "./style.css"
@@ -25,7 +25,7 @@ const CityInfo = () => {
   }
 
   const findCity = (city) => city.replace(/\s/g, '').toLowerCase()
-
+  const theme = useSelector(state => state.json?.t)
   const chooseCity = (event) => {
     const city = event.currentTarget.textContent,
     cityName =  json.find(item=> findCity(item.capital).includes(findCity(city)))
@@ -34,7 +34,9 @@ const CityInfo = () => {
   }
 
   return (
-    <div className="city-info">
+    <div className="city-info" style={
+      {filter: `invert(${theme ? 1 : 0})`}
+    }>
     {/* header */}
       <div className="city-info-header">
         <h2>

@@ -1,5 +1,37 @@
 .chart {
+overflow: hidden;
+  bottom: 0;
+  left: 0;
+  margin-top: 30px;
+}
+
+.loading-chart {
+  height: 100px;
+  width: 100px;
   position: absolute;
   bottom: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e4e4e4;
+  font-weight: 100;
+  
+  
+  font-size: 20px;
+}
+
+
+.chart h4 {
+  font-weight: 100;
+  font-size: 11px;
+}
+
+.chart h4 span {
+  color: lightblue;
+}
+@media only screen and (max-width: 480px) {
+  .chart {
+    display: none;
+  }
 }

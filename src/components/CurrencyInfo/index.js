@@ -74,8 +74,8 @@ const CurrencyInfo = () => {
       <span>{res(values.a, values.v )}
         <span className="percentag">{percentage[2].p+"%"}</span></span></h4>
         <div className="svg-charts">
-          {percentage.map(item => (console.log(item, item.p, item.c, item.c.fill),
-            <SvgPie per={item.pc} fill={item.c.fill} stroke={item.c.stroke} c={item.cur} comp={item.curToCom}/>
+          {percentage.map((item, index) => (
+            <SvgPie key={'item'+index} per={item.pc} fill={item.c.fill} stroke={item.c.stroke} c={item.cur} comp={item.curToCom}/>
           ))}   
         </div>
      </div>

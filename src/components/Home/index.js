@@ -27,6 +27,7 @@ const Home = () => {
         from: this.base.currencies[0],
         to: this.toConvert.currencies[0]
       }
+
       const y = x && Object.keys(x.rates)
         .filter(item => ~[inputValue.from.code, inputValue.to.code].indexOf(item))
         .map(item =>  ({name: item, value: x.rates[item]}))
@@ -34,7 +35,7 @@ const Home = () => {
             ? y.map(i=>i.value) 
             : [...y.map(i=>i.value)].reverse())
       
-      return y && (res(_y) || (_y.length === 1 ? res(_y.concat(_y[0])) : NaN))
+      return y && (res(_y) || (_y.length === 1 ? (!isNaN(+currencyValue) ? res(_y.concat(_y[0])) : NaN) : NaN))
     }
   }
 

@@ -7,14 +7,16 @@ const json = (state = {
   'value': null,
   'allCurrencies': null,
   'rate': null,
-  'currency': null }, action) => ({
+  'currency': null,
+  't': false }, action) => ({
   ...state,
     'ip':  findItem('ip', action, state.ip),
     'base':findItem('base', action, state.base),
     'value': findItem('value', action, state.value),
     'allCurrencies': findItem('allCurrencies', action, state.allCurrencies),
     'rate': findItem('rate', action, state.rate),
-    'currency': findItem('currency', action, state.currency)
+    'currency': findItem('currency', action, state.currency),
+    't': findItem('t', action, state.t)
 })
 
 export {

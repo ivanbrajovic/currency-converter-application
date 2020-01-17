@@ -66,3 +66,19 @@
   box-shadow: 0 0 20px #f4f4f4;
   border-color: #e4e4e4;
 }
+
+@media only screen and (max-width: 768px) {
+  .currency-info-component{
+    display: block;
+    margin-top: 30px;
+    height: 80%;
+    overflow: auto;
+  }
+  .currency-info-component .svg-charts {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .currency-info-component .svg-charts svg {
+    /* transform: scale(.5); */
+  }
+}
